@@ -1,5 +1,5 @@
-import crypto from "crypto"
-import util from "util"
+import crypto from 'crypto';
+import util from 'util';
 
 const hashPassword = util.promisify(crypto.pbkdf2);
 
@@ -15,11 +15,20 @@ export function getPort(arg: string, env: string) {
   return isInteger(env)
     ? parseInt(env)
     : isInteger(arg)
-    ? parseInt(arg)
-    : defaultPort;
+      ? parseInt(arg)
+      : defaultPort;
 }
 
-export async function calculatePasswordHash(plainTextPassword: string, passwordSalt: string) {
-    const passwordHash = await hashPassword(plainTextPassword, passwordSalt, 100000, 64, "sha512");
-    return passwordHash.toString("hex");
+export async function calculatePasswordHash(
+  plainTextPassword: string,
+  passwordSalt: string
+) {
+  const passwordHash = await hashPassword(
+    plainTextPassword,
+    passwordSalt,
+    100000,
+    64,
+    'sha512'
+  );
+  return passwordHash.toString('hex');
 }

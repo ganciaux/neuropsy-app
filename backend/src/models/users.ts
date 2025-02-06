@@ -1,31 +1,31 @@
 import {
-Column,
+  Column,
   CreateDateColumn,
   Entity,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
-} from "typeorm";
+} from 'typeorm';
 
-@Entity({ name: "USERS" })
+@Entity({ name: 'USERS' })
 export class User {
   @PrimaryGeneratedColumn()
-    id!: number;
+  id!: number;
 
   @Column()
-    email!: string;
+  email!: string;
 
   @Column()
-    passwordHash!: string;
+  passwordHash!: string;
 
   @Column()
-    passwordSalt!: string;
+  passwordSalt!: string;
 
   @Column()
-    isAdmin!: boolean;
+  isAdmin!: boolean;
 
   @CreateDateColumn()
-    createdAt!: Date;
+  createdAt!: Date;
 
   @UpdateDateColumn()
-    lastUpdatedAt!: Date;
+  lastUpdatedAt!: Date;
 }
