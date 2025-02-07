@@ -1,13 +1,10 @@
-git clone https://github.com/ganciaux/neuropsy-app.git
-cd neuropsy-app/
-mkdir -p backend frontend docker
-cd backend
-npm init -y
-npm install express cors body-parser dotenv
-npm install --save-dev typescript @types/node @types/express ts-node nodemon
-tsc --init
-npm install --save-dev @types/cors
-cd ../frontend
-ng new neuropsy-app-frontend
-cd neuropsy-app-frontend
-npm install @angular/material @angular/cdk @angular/animations
+postgres:
+psql -U postgres -d neuropsy
+\l
+\du
+\dt
+
+
+docker:
+docker-compose up --build
+
