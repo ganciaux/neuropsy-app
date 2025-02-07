@@ -11,7 +11,7 @@ import { getAllUsers } from './routes/get-all-user';
 dotenv.config();
 
 const app = express();
-const PORT = getPort(process.argv[2], process.env.PORT || '9001');
+const PORT = getPort(process.argv[2], process.env.PORT || '5000');
 
 function setupExpress() {
   app.use(cors());
